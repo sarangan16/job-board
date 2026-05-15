@@ -1,6 +1,9 @@
 import { useJobStore } from "../store/useJobStore";
 
-export default function Navbar() {
+type props = {
+  onLogout: () => void;
+};
+export default function Navbar({ onLogout}: props){
   const jobs = useJobStore((state) => state.jobs);
 
   const applied = jobs.filter((j) => j.status === "Applied").length;
@@ -14,6 +17,12 @@ export default function Navbar() {
         <h1 className="text-xl font-bold text-white">Job Board</h1>
 
         <div className="flex items-center gap-6 text-sm">
+          <button
+            onClick={onLogout}
+            className="text-slate-400 hover:text-white text-sm transition"
+          >
+            Log out
+          </button>
           <span className="text-blue-400 font-medium">{applied} Applied</span>
           <span className="text-yellow-400 font-medium">{interviews} Interviews</span>
           <span className="text-green-400 font-medium">{offers} Offers</span>
