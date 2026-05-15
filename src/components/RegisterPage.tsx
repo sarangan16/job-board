@@ -26,7 +26,7 @@ export default function RegisterPage() {
   // show this after successful register
   if (done) {
     return (
-      <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-[#0f1117] flex items-center justify-center p-4">
         <div className="bg-slate-800 rounded-2xl p-8 w-full max-w-md text-center">
           <h1 className="text-white text-2xl font-bold mb-2">Check your email</h1>
           <p className="text-slate-400 text-sm">
