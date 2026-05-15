@@ -17,15 +17,16 @@ export default function Navbar({ onLogout}: props){
         <h1 className="text-xl font-bold text-white">Job Board</h1>
 
         <div className="flex items-center gap-6 text-sm">
+          
+          <span className="text-blue-400 font-medium">{applied} Applied</span>
+          <span className="text-yellow-400 font-medium">{interviews} Interviews</span>
+          <span className="text-green-400 font-medium">{offers} Offers</span>
           <button
             onClick={onLogout}
             className="text-slate-400 hover:text-white text-sm transition"
           >
             Log out
           </button>
-          <span className="text-blue-400 font-medium">{applied} Applied</span>
-          <span className="text-yellow-400 font-medium">{interviews} Interviews</span>
-          <span className="text-green-400 font-medium">{offers} Offers</span>
         </div>
 
       </div>
