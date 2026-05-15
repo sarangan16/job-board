@@ -19,17 +19,27 @@ export default function Navbar({ onLogout}: props){
           <h1 className="text-lg font-semibold text-white tracking-tight">JobBoard</h1>
         </div>
 
-        <div className="flex items-center gap-3 text-sm">
-          
-          <span className="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full text-xs font-medium">{applied} Applied</span>
-          <span className="bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 px-3 py-1 rounded-full text-xs font-medium">{interviews} Interviews</span>
-          <span className="bg-green-500/10 text-green-400 border border-green-500/20 px-3 py-1 rounded-full text-xs font-medium">{offers} Offers</span>
-          <button
-            onClick={onLogout}
-            className="ml-4 text-xs pointer text-slate-500 hover:text-white transition"
-          >
-            Log out
-          </button>
+        <div className="flex items-center divide-x divide-white/10">
+          <div className="flex flex-col items-center px-6">
+            <span className="text-lg font-semibold text-white leading-none">{applied}</span>
+            <span className="text-xs text-slate-500 mt-1">Applied</span>
+          </div>
+          <div className="flex flex-col items-center px-6">
+            <span className="text-lg font-semibold text-white leading-none">{interviews}</span>
+            <span className="text-xs text-slate-500 mt-1">Interviews</span>
+          </div>
+          <div className="flex flex-col items-center px-6">
+            <span className="text-lg font-semibold text-yellow-400 leading-none">{offers}</span>
+            <span className="text-xs text-slate-500 mt-1">Offers</span>
+          </div>
+          <div className="pl-6">
+            <button
+              onClick={onLogout}
+              className="text-xs text-slate-500 hover:text-white transition"
+            >
+              Log out
+            </button>
+          </div>
         </div>
 
       </div>

@@ -22,11 +22,11 @@ const [showHistory, setShowHistory] = useState(false);
     }
   };
       function getStatusStyle(status: string) {
-    if (status === "Applied") return "bg-blue-500/20 text-blue-400";
-    if (status === "Interview") return "bg-yellow-500/20 text-yellow-400";
-    if (status === "Offer") return "bg-green-500/20 text-green-400";
-    if (status === "Rejected") return "bg-red-500/20 text-red-400";
-    return "bg-slate-500/20 text-slate-400";
+    if (status === "Applied") return "text-slate-400";
+    if (status === "Interview") return "text-yellow-400/70";
+    if (status === "Offer") return "text-green-400/70";
+    if (status === "Rejected") return "text-red-400/70";
+    return "text-slate-500";
   }
 
 
@@ -78,13 +78,13 @@ const [showHistory, setShowHistory] = useState(false);
       </div>
 
       {/* Status badge */}
-      <span className={`text-xs px-2 py-1 rounded-full font-medium ${getStatusStyle(job.status)}`}>
+      <span className={`text-xs font-medium tracking-wide ${getStatusStyle(job.status)}`}>
 
         {job.status}
       </span>
       <button
         onClick={() => setShowHistory(!showHistory)}
-        className="flex items-center gap-1 text-slate-500 text-xs mt-3 hover:text-slate-300 transition"
+        className="flex items-center gap-1 text-slate-600 text-xs mt-3 hover:text-slate-400 transition tracking-wide"
       >
         <ChevronDown className={`w-3 h-3 transition-transform ${showHistory ? "rotate-180" : ""}`} />
         History
