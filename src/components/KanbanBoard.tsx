@@ -49,8 +49,8 @@ export default function KanbanBoard({ onEdit }: Props) {
                 >
                   {/* column header */}
                   <div className="flex items-center justify-between mb-4">
-                    <h2 className="font-semibold text-white">{status}</h2>
-                    <span className="bg-slate-700 text-slate-300 text-xs px-2 py-1 rounded-full">
+                    <h2 className="font-medium text-slate-300 text-sm uppercase tracking-widest">{status}</h2>
+                    <span className="bg-white/5 text-slate-400 text-xs w-6 h-6 rounded-full flex items-center justify-center font-medium">
                       {columnJobs.length}
                     </span>
                   </div>

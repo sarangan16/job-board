@@ -43,17 +43,17 @@ const [showHistory, setShowHistory] = useState(false);
   
 
   return (
-    <div className="bg-[#1c1f2e] rounded-xl p-4 mb-3 border border-white/5 hover:border-white/10 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
+    <div className="bg-[#1c1f2e] rounded-2xl p-5 mb-2.5 border border-white/5 hover:border-yellow-400/20 hover:shadow-2xl hover:-translate-y-1 transition-all duration-200 group">
       
       <div className="flex items-start justify-between mb-2">
         <div>
-          <h3 className="font-semibold text-white text-sm">{job.company}</h3>
-          <p className="text-slate-400 text-xs mt-0.5">{job.role}</p>
+          <h3 className="font-semibold text-white text-base tracking-tight">{job.company}</h3>
+          <p className="text-slate-400 text-sm mt-0.5">{job.role}</p>
         </div>
         <div className="flex gap-1">
           <button
             onClick={() => onEdit(job)}
-            className="p-1.5 hover:bg-slate-600 rounded-lg transition"
+            className="p-1.5 hover:bg-white/5 rounded-lg transition opacity-0 group-hover:opacity-100"
           >
             <Pencil className="w-3.5 h-3.5 text-slate-400" />
           </button>
@@ -67,7 +67,7 @@ const [showHistory, setShowHistory] = useState(false);
       </div>
 
       {/* Location */}
-      <div className="flex items-center gap-1 text-slate-400 text-xs mb-1">
+      <div className="flex items-center gap-1.5 text-slate-500 text-xs mb-1">
         <MapPin className="w-3 h-3" />
         <span>{job.location}</span>
       </div>

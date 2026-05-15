@@ -15,18 +15,18 @@ export default function Navbar({ onLogout}: props){
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         <div className="flex items-center gap-2">
-  <div className="w-6 h-6 bg-yellow-400 rounded-md" />
-  <h1 className="text-lg font-semibold text-white tracking-tight">JobBoard</h1>
-</div>
+          <div className="w-6 h-6 bg-yellow-400 rounded-md" />
+          <h1 className="text-lg font-semibold text-white tracking-tight">JobBoard</h1>
+        </div>
 
-        <div className="flex items-center gap-6 text-sm">
+        <div className="flex items-center gap-3 text-sm">
           
-          <span className="text-blue-400 font-medium">{applied} Applied</span>
-          <span className="text-yellow-400 font-medium">{interviews} Interviews</span>
-          <span className="text-green-400 font-medium">{offers} Offers</span>
+          <span className="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full text-xs font-medium">{applied} Applied</span>
+          <span className="bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 px-3 py-1 rounded-full text-xs font-medium">{interviews} Interviews</span>
+          <span className="bg-green-500/10 text-green-400 border border-green-500/20 px-3 py-1 rounded-full text-xs font-medium">{offers} Offers</span>
           <button
             onClick={onLogout}
-            className="text-slate-400 hover:text-white text-sm transition"
+            className="ml-4 text-xs pointer text-slate-500 hover:text-white transition"
           >
             Log out
           </button>
