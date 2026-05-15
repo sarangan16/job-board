@@ -67,7 +67,7 @@ export default function LoginPage(){
 
         <p className="text-slate-400 text-xs text-center mt-4">
           No account? {" "}
-          <a href="" className="text-yellow-400 hover:underline">
+          <a href="/register" className="text-yellow-400 hover:underline">
             Register
           </a>
         </p>
