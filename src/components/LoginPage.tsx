@@ -23,7 +23,7 @@ export default function LoginPage(){
     setLoading(false);
   }
   return(
-    <div className="min-h-screen bg-[#0f1117] flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[#0f1117] flex flex-col items-center justify-center p-4">
       <div className="bg-[#13151f] rounded-2xl p-8 w-full max-w-md border border-white/5">
         <h1 className="text-white text-2xl font-bold mb-2">Welcome Back</h1>
         <p className="text-slate-400 text-sm mb-4">
@@ -72,6 +72,9 @@ export default function LoginPage(){
           </a>
         </p>
       </div>
+      <footer className="mt-6 text-xs text-slate-500 text-center">
+      Developed by Sarangan
+    </footer>
     </div>
   )
 }
