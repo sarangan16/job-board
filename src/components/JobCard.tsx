@@ -1,28 +1,46 @@
-import { Trash2, Pencil, MapPin, Calendar } from "lucide-react";
-import { formatDistanceToNow } from "date-fns";
+import { useState } from "react";
+import { Trash2, Pencil, MapPin, Calendar, ChevronDown } from "lucide-react";
 import { useJobStore } from "../store/useJobStore";
 import type { JobApplication } from "../types/index";
+import StatusHistory from "./StatusHistory";
 
 type Props = {
   job: JobApplication;
   onEdit: (job: JobApplication) => void;
 };
 
-const statusColors: Record<string, string> = {
-  Applied: "bg-blue-500/20 text-blue-400",
-  Interview: "bg-yellow-500/20 text-yellow-400",
-  Offer: "bg-green-500/20 text-green-400",
-  Rejected: "bg-red-500/20 text-red-400",
-};
+
 
 export default function JobCard({ job, onEdit }: Props) {
   const deleteJob = useJobStore((state) => state.deleteJob);
+const [showHistory, setShowHistory] = useState(false);
+
 
   const handleDelete = () => {
     if (window.confirm(`Delete ${job.company} application?`)) {
       deleteJob(job.id);
     }
   };
+      function getStatusStyle(status: string) {
+    if (status === "Applied") return "bg-blue-500/20 text-blue-400";
+    if (status === "Interview") return "bg-yellow-500/20 text-yellow-400";
+    if (status === "Offer") return "bg-green-500/20 text-green-400";
+    if (status === "Rejected") return "bg-red-500/20 text-red-400";
+    return "bg-slate-500/20 text-slate-400";
+  }
+
+
+
+    function getDaysAgo(dateString: string) {
+    const appliedDate = new Date(dateString);
+    const today = new Date();
+    const diffMs = today.getTime() - appliedDate.getTime();
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    if (diffDays === 0) return "today";
+    if (diffDays === 1) return "1 day ago";
+    return `${diffDays} days ago`;
+  }
+  
 
   return (
     <div className="bg-slate-700 rounded-xl p-4 mb-3 cursor-grab active:cursor-grabbing hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
@@ -56,14 +74,25 @@ export default function JobCard({ job, onEdit }: Props) {
 
       <div className="flex items-center gap-1 text-slate-400 text-xs mb-3">
         <Calendar className="w-3 h-3" />
-        <span>Applied {formatDistanceToNow(new Date(job.appliedDate))} ago</span>
+        <span>Applied {getDaysAgo(job.appliedDate)}</span>
       </div>
 
       {/* Status badge */}
-      <span className={`text-xs px-2 py-1 rounded-full font-medium ${statusColors[job.status]}`}>
+      <span className={`text-xs px-2 py-1 rounded-full font-medium ${getStatusStyle(job.status)}`}>
+
         {job.status}
       </span>
+      <button
+        onClick={() => setShowHistory(!showHistory)}
+        className="flex items-center gap-1 text-slate-500 text-xs mt-3 hover:text-slate-300 transition"
+      >
+        <ChevronDown className={`w-3 h-3 transition-transform ${showHistory ? "rotate-180" : ""}`} />
+        History
+      </button>
+
+      {showHistory && <StatusHistory history={job.history} />}
 
     </div>
+    
   );
 }
