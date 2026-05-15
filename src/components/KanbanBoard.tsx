@@ -43,7 +43,7 @@ export default function KanbanBoard({ onEdit }: Props) {
             <Droppable droppableId={status} key={status}>
               {(provided) => (
                 <div
-                  className="flex-1 bg-slate-800 rounded-xl p-4"
+                  className="flex-1 bg-[#13151f] border border-white/5 rounded-xl p-4"
                   ref={provided.innerRef}
                   {...provided.droppableProps}
                 >

@@ -65,13 +65,13 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white">
+    <div className="min-h-screen bg-[#0f1117] text-white">
       <Navbar  onLogout={() => supabase.auth.signOut()}  />
       <main className="pt-24 px-6 max-w-7xl mx-auto">
 
         {/* Top bar */}
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-xl font-bold text-white">My Applications</h1>
+          <h1 className="text-xl font-semibold tracking-tight text-white">My Applications</h1>
           <button
             onClick={() => setIsModalOpen(true)}
             className="bg-yellow-500 text-black font-semibold px-4 py-2 rounded-lg text-sm hover:bg-yellow-400 transition"

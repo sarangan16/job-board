@@ -43,7 +43,7 @@ const [showHistory, setShowHistory] = useState(false);
   
 
   return (
-    <div className="bg-slate-700 rounded-xl p-4 mb-3 cursor-grab active:cursor-grabbing hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+    <div className="bg-[#1c1f2e] rounded-xl p-4 mb-3 border border-white/5 hover:border-white/10 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
       
       <div className="flex items-start justify-between mb-2">
         <div>

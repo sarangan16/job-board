@@ -21,7 +21,7 @@ export default function SearchBar(){
           placeholder="Search company or role..."
           value={searchQuery}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full bg-slate-800 text-white placeholder-slate-400 border border-slate-700 rounded-lg pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-yellow-500"
+          className="w-full bg-[#13151f] text-white placeholder-slate-500 border border-white/5 rounded-lg pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-yellow-400/50"
         />
       </div>
 
@@ -34,7 +34,7 @@ export default function SearchBar(){
             className={`px-4 py-1.5 rounded-full text-sm font-medium transition ${
               filterStatus === status
                 ? "bg-yellow-500 text-black"
-                : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+                : "bg-[#13151f] text-slate-400 border border-white/5 hover:border-white/10"
             }`}
           >
             {status}
