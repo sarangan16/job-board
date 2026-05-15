@@ -8,6 +8,8 @@ import RegisterPage from "./components/RegisterPage";
 import type { JobApplication } from "./types/index";
 import { supabase } from "./lib/supabase";
 import type { Session } from "@supabase/supabase-js";
+import { useJobStore } from "./store/useJobStore";
+
 
 
 export default function App() {
@@ -15,12 +17,16 @@ export default function App() {
   const[ loading, setLoading ] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingJob, setEditingJob] = useState<JobApplication | null>(null);
+    const fetchJobs = useJobStore((state) => state.fetchJobs);
 
   useEffect(() => {
     // check if user is already logged in
     supabase.auth.getSession().then(({ data }) => {
       setSession(data.session);
       setLoading(false);
+      if (data.session){
+        fetchJobs()
+      }
     });
 
     // listener for login / logout. 
