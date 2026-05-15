@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+Job Board — Application Tracker
+A full-stack job application tracker built with React, TypeScript, and Supabase. Track your job applications through a Kanban-style board with real-time status updates and authentication.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
 
-Currently, two official plugins are available:
+Authentication — Secure email and password login via Supabase Auth
+Kanban Board — Visual pipeline across Applied, Interview, Offer, and Rejected columns
+Application Management — Add, edit, and delete job applications
+Status History — Every status change is logged and visible per card
+Search & Filter — Filter applications by company, role, or status
+Persistent Data — Jobs saved per user via Zustand with local persistence
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Tech Stack
 
-## React Compiler
+React + TypeScript
+Vite — build tool
+Tailwind CSS — styling
+Supabase — authentication
+Zustand — state management
+Lucide React — icons
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Getting Started
 
-## Expanding the ESLint configuration
+1. Clone the repository
+   bashgit clone https://github.com/sarangan16/job-board.git
+   cd job-board
+2. Install dependencies
+   bashnpm install
+3. Set up Supabase
+   Create a free project at supabase.com, then go to Project Settings → API and copy your Project URL and publishable key.
+   Create a .env file in the root of the project:
+   VITE_SUPABASE_URL=your_project_url
+   VITE_SUPABASE_ANON_KEY=your_anon_key
+4. Run the app
+   bashnpm run dev
+   Open http://localhost:5173 in your browser.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Project Structure
+src/
+├── components/
+│ ├── JobCard.tsx # Individual application card
+│ ├── JobModal.tsx # Add / edit form
+│ ├── KanbanBoard.tsx # Four-column board layout
+│ ├── LoginPage.tsx # Login screen
+│ ├── Navbar.tsx # Top navigation with stats
+│ ├── RegisterPage.tsx # Register screen
+│ ├── SearchBar.tsx # Search and filter controls
+│ └── StatusHistory.tsx # Status change timeline
+├── lib/
+│ └── supabase.ts # Supabase client
+├── store/
+│ └── useJobStore.ts # Zustand store
+├── types/
+│ └── index.ts # Shared TypeScript types
+└── App.tsx # Root component + auth logic
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Author
+sarangan16 — github.com/sarangan16
