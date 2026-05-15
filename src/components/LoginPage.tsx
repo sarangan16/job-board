@@ -97,7 +97,7 @@ export default function LoginPage(){
      
     </div>
      <footer className="mt-6 text-xs text-slate-500 text-center">
-      Developed by Sarangan
+      @RAAVN
     </footer>
     </div>
   )
