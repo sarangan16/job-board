@@ -24,10 +24,32 @@ export default function LoginPage(){
   }
   return(
     <div className="min-h-screen bg-[#0f1117] flex flex-col items-center justify-center p-4">
-      <div className="bg-[#13151f] rounded-2xl p-8 w-full max-w-md border border-white/5">
-        <h1 className="text-white text-2xl font-bold mb-2">Welcome Back</h1>
+      <div className="w-full max-w-5xl bg-[#13151f] rounded-2xl border border-white/5 overflow-hidden grid md:grid-cols-2">
+      <div className="p-10 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/5">
+
+        <p className="text-yellow-400 text-sm mb-3 uppercase tracking-widest">
+          Job Board
+        </p>
+
+          <h3 className="text-white text-2xl font-bold leading-tight mb-4">
+            Organize your job search in one place
+          </h3>
+
+
+        <p className="text-slate-400 text-sm leading-7 mb-8">
+            Built originally as a personal tool during the job search process in Germany,
+  Job Board helps candidates organize applications, interviews, offers, and
+  rejections in one simple workflow. Designed for people applying to multiple
+  roles every week, without the complexity of spreadsheets or bulky productivity tools.
+        </p>
+
+        
+
+      </div>
+       <div className="p-10">
+        <h1 className="text-white text-2xl font-bold mb-2 uppercase">Login</h1>
         <p className="text-slate-400 text-sm mb-4">
-          login to board
+          Keep track of your applications
 
         </p>
          {error && (
@@ -41,7 +63,7 @@ export default function LoginPage(){
           <input type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)} 
-            placeholder="Your Email" 
+            placeholder="Email" 
             className="w-full bg-[#1c1f2e] text-white rounded-lg px-3 py-2.5 text-sm border border-white/5 focus:outline-none focus:border-yellow-400/50" />
         </div>
 
@@ -52,7 +74,7 @@ export default function LoginPage(){
           <input type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="****" className="w-full bg-[#1c1f2e] text-white rounded-lg px-3 py-2.5 text-sm border border-white/5 focus:outline-none focus:border-yellow-400/50" />
+            placeholder="Password" className="w-full bg-[#1c1f2e] text-white rounded-lg px-3 py-2.5 text-sm border border-white/5 focus:outline-none focus:border-yellow-400/50" />
         </div>
         </div>
 
@@ -72,7 +94,9 @@ export default function LoginPage(){
           </a>
         </p>
       </div>
-      <footer className="mt-6 text-xs text-slate-500 text-center">
+     
+    </div>
+     <footer className="mt-6 text-xs text-slate-500 text-center">
       Developed by Sarangan
     </footer>
     </div>

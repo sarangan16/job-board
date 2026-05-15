@@ -27,7 +27,7 @@ export default function RegisterPage() {
   if (done) {
     return (
       <div className="min-h-screen bg-[#0f1117] flex items-center justify-center p-4">
-        <div className="bg-slate-800 rounded-2xl p-8 w-full max-w-md text-center">
+        <div className="bg-[#0f1117] rounded-2xl p-8 w-full max-w-md text-center ">
           <h1 className="text-white text-2xl font-bold mb-2">Check your email</h1>
           <p className="text-slate-400 text-sm">
             We sent a confirmation link to <span className="text-white">{email}</span>. Click it to activate your account.
@@ -41,8 +41,8 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4">
-      <div className="bg-slate-800 rounded-2xl p-8 w-full max-w-md">
+    <div className="min-h-screen bg-[#0f1117] flex items-center justify-center p-4">
+      <div className="bg-[#13151f] rounded-2xl p-8 w-full max-w-md">
 
         <h1 className="text-white text-2xl font-bold mb-2">Create account</h1>
         <p className="text-slate-400 text-sm mb-6">Start tracking your job applications</p>
@@ -58,8 +58,8 @@ export default function RegisterPage() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@email.com"
-              className="w-full bg-slate-700 text-white rounded-lg px-3 py-2.5 text-sm focus:outline-none"
+              placeholder="Email"
+              className="w-full bg-[#1c1f2e] text-white rounded-lg px-3 py-2.5 text-sm focus:outline-none"
             />
           </div>
 
@@ -69,8 +69,8 @@ export default function RegisterPage() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••"
-              className="w-full bg-slate-700 text-white rounded-lg px-3 py-2.5 text-sm focus:outline-none"
+              placeholder="Password"
+              className="w-full bg-[#1c1f2e] text-white rounded-lg px-3 py-2.5 text-sm focus:outline-none"
             />
           </div>
         </div>
