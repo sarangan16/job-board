@@ -7,6 +7,8 @@ import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
 import type { JobApplication } from "./types/index";
 import { supabase } from "./lib/supabase";
+import type { Session } from "@supabase/supabase-js";
+
 
 export default function App() {
   const [session, setSession] = useState <Session | null>(null);
@@ -48,7 +50,7 @@ export default function App() {
       </div>
     )
   }
-  
+
   if (!session) {
     if (window.location.pathname === "/register") {
       return <RegisterPage />;
@@ -58,7 +60,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-900 text-white">
-      <Navbar />
+      <Navbar  onLogout={() => supabase.auth.signOut()}  />
       <main className="pt-24 px-6 max-w-7xl mx-auto">
 
         {/* Top bar */}
