@@ -23,8 +23,8 @@ export default function LoginPage(){
     setLoading(false);
   }
   return(
-    <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4">
-      <div className="bg-slate-800 rounded-2xl p-8 w-full max-w-md">
+    <div className="min-h-screen bg-[#0f1117] flex items-center justify-center p-4">
+      <div className="bg-[#13151f] rounded-2xl p-8 w-full max-w-md border border-white/5">
         <h1 className="text-white text-2xl font-bold mb-2">Welcome Back</h1>
         <p className="text-slate-400 text-sm mb-4">
           login to board
@@ -42,7 +42,7 @@ export default function LoginPage(){
             value={email}
             onChange={(e) => setEmail(e.target.value)} 
             placeholder="Your Email" 
-            className="w-full bg-slate-700 text-white rounded-lg px-3 py-2" />
+            className="w-full bg-[#1c1f2e] text-white rounded-lg px-3 py-2.5 text-sm border border-white/5 focus:outline-none focus:border-yellow-400/50" />
         </div>
 
         <div>
@@ -52,7 +52,7 @@ export default function LoginPage(){
           <input type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="****" className="w-full bg-slate-700 text-white round-lg px-3 py-2 text-sm" />
+            placeholder="****" className="w-full bg-[#1c1f2e] text-white rounded-lg px-3 py-2.5 text-sm border border-white/5 focus:outline-none focus:border-yellow-400/50" />
         </div>
         </div>
 
